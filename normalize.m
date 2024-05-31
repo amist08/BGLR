@@ -1,13 +1,13 @@
 function [Samples2]=normalize(Samples)
 [M,N] = size(Samples);
 
-Samples2 = zeros(M,N); %³õÊ¼»¯Samples2Êı×é£¨M*N£©
+Samples2 = zeros(M,N); %åˆå§‹åŒ–Samples2æ•°ç»„ï¼ˆM*Nï¼‰
 for i=1:N
     allAtr = Samples(:,i);
-    %STD = std(allAtr);    % Çó±ê×¼²î
-    MEAN = mean(allAtr);  % Çó¾ùÖµ
-    %x = (allAtr-MEAN)/STD;
-    x = allAtr-MEAN;
+    STD = std(allAtr);    % æ±‚æ ‡å‡†å·®
+    MEAN = mean(allAtr);  % æ±‚å‡å€¼
+    x = (allAtr-MEAN)/STD;
+    %x = allAtr-MEAN;
     Samples2(:,i)=x;
 end
 end
